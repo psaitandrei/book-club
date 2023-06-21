@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+//components
+import CenterContent from './components/center-content/CenterContent.js';
+import Navigation from './components/nav/Navigation.js';
+import Footer from './components/footer/Footer.js';
+import LeftSidebar from './components/left-sidebar/LeftSidebar.js';
+import RightSidebar from './components/right-sidebar/RightSidebar.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid>
+      {/*Navigation*/}
+      <Row>
+        <Navigation />
+      </Row>
+      {/*Main Body*/}
+      <Row>
+
+        {/*Left Sidebar*/}
+        <Col md="2">
+          <LeftSidebar />
+        </Col>
+
+        {/*Middle Content*/}
+        <Col md="8">
+          <CenterContent />
+        </Col>
+
+        {/*Right Sidebar*/}
+        <Col md="2">
+          <RightSidebar />
+        </Col>
+      </Row>
+
+      {/*Footer*/}
+      <Row>
+        <Footer />
+      </Row>
+    </Container>
   );
 }
 
